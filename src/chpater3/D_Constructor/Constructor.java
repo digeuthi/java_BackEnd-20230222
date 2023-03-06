@@ -21,7 +21,7 @@ class Circle {
 	Circle(double radius){ //파라미터가 없는 경우에도 쓸수 있고, 파라미터를 받아서 쓸수도 있다.
 		System.out.println("Circle이 생성됩니다.");
 		this.radius = radius; //클래스 기준으로 위에 만든 인스턴스 변수는 전역 변수이다
-		//this는 해당 인스턴스를 지칭, 이 인스턴스의 radius를 따라라
+		//this는 해당 인스턴스를 지칭, 이 인스턴스의 radius를 따라라는뜻
 		//this : 인스턴스 자신. this를 하지않으면 매개변수로 받는 radius를 인식하게 된다
 		//인스턴스 변수를 지칭하고자 할때는 모든 경우에 다 this를 찍는게 좋다.(초기화 작업을 할때)
 		//생성자만들때는 꼭 this 찍어주는게 좋다!
