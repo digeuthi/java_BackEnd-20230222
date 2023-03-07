@@ -1,4 +1,4 @@
-package chpater3.D_Constructor;
+package chapter3.D_Constructor;
 
 //생성자
 // 인스턴스가 생성될때 호출되는 인스턴스 초기화 '메서드'
