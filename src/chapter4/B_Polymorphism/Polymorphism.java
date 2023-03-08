@@ -59,7 +59,7 @@ public class Polymorphism {
 		SuperClass super2 = subClass2;
 		//super2을 subClass2을 바라보게 만들었다.
 		
-//		System.out.println(subClass1.number3);
+		System.out.println(subClass1.number3); //33
 		System.out.println(subClass1); //다 같은 주소
 		System.out.println(super1); //다 같은 주소
 		
@@ -71,7 +71,7 @@ public class Polymorphism {
 		//sub1을 super1(subClass1을 보고있음)을 바라보게 만들었다
 		// 그래서 subClass1, super1, sub1 전부 같은 곳을 바라보고 있다.
 		
-//		System.out.println(sub1.number3);
+		System.out.println(sub1.number3); //33
 		System.out.println(sub1); //다 같은 주소
 		
 		super2.method1(); //실제 인스턴스 값이 나온다.?
