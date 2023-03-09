@@ -78,7 +78,7 @@ public class ExchangeRate {
 	//Set : 원래 갖고 있는 인스턴수 변수를 변경해주는 메서드, 반환은 하지 않는다. 변경만 함
 	//반환하지 않으니 반환타입은 void 
 	//void 메서드명(set~매개변수명)(바꾸고자하는 값,위에 선언한 인스턴스 타입과 변수 그대로 입력)
-	//인스턴스가 가지고 있는 특정 인스턴스 변수를 변경할  때 사요하는 메서드
+	//인스턴스가 가지고 있는 특정 인스턴스 변수를 변경할 때 사용하는 메서드
 //	public/*외부에서 접근할수 있어야 하므로*/ void setExchangingCurrency(String exchangingCurrency) {
 //		this.exchangingCurrency = exchangingCurrency;
 //	}

@@ -36,14 +36,30 @@ public class ExchangeApplication {
 		//입력받기
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("넣을 화폐 : ");
-		String exchangingCurrency = scanner.nextLine(); //넣을 화폐 단위 
+		//try문 안에서 각 변수 설정해주면 지역변수로 인식해서
+		//그 밑에서 변수를 받을수 없게 되므로 이렇게 따로 빼서 전역 변수로 설정
+		String exchangingCurrency = null;
+		String exchangedCurrency = null;
+		int amount = 0;
 		
-		System.out.println("바꿀 화폐 : ");
-		String exchangedCurrency = scanner.nextLine(); // 바꿀 화폐 단위 
+		//0309일자에 try catch문 추가
+		try {
+			System.out.println("넣을 화폐 : ");
+			exchangingCurrency = scanner.nextLine(); //넣을 화폐 단위 
+			
+			System.out.println("바꿀 화폐 : ");
+			exchangedCurrency = scanner.nextLine(); // 바꿀 화폐 단위 
+			
+			System.out.println("금액 : ");
+			amount = scanner.nextInt(); // 돈
+			
+		}catch(Exception exception) {
+			//exception.printStackTrace(); //이렇게 하면 오류로 콘솔에 출력된다.
+			System.out.println("입력값의 타입이 맞지않습니다.");
+			return;
+		}
 		
-		System.out.println("금액 : ");
-		int amount = scanner.nextInt(); // 돈
+		
 		
 		//입력값 확인
 		System.out.println(exchangingCurrency + " " + exchangedCurrency + " " + amount);
