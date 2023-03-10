@@ -69,11 +69,12 @@ public class ExceptionHandling {
 		
 		//bringException(); 예외처리에 대한 강제성 부여
 		//오류가 뜨게 되는데 그중에 하나인 try catch문으로 감싼것
-		try {
-			bringException();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
+//		try {
+//			bringException();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} 
+		
 		
 	}
 
