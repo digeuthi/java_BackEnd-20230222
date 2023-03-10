@@ -114,6 +114,8 @@ public class ApiClass {
 			for(int lottoNumber : lotto) {
 				System.out.print(lottoNumber + " ");
 			}
+			
+			
 		
 	}
 
