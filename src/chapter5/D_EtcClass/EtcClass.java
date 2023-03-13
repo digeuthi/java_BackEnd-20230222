@@ -46,8 +46,8 @@ public class EtcClass {
 		
 		//BigDecimal
 		//정확한 소수점 연산을 하기 위한 클래스
-		double double1 = 9.45112548855;
-		double double2 = 1.35224458811;
+		double double1 = 9.45458445844855411255;
+		double double2 = 8.35224458811;
 		System.out.println(double1 + double2);
 		
 		BigDecimal bigDecimal1 = new BigDecimal(String.valueOf(double1)); //안에 문자열을 넣어줘야한다
