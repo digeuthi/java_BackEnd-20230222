@@ -1,0 +1,10 @@
+package chapter5.D_EtcClass;
+
+public class EtcClass {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,62 @@
+package airplaneReservation;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import airplaneReservation.dto.GetAirplaneListDto;
+import airplaneReservation.entity.Airplane;
+import airplaneReservation.entity.Cost;
+import airplaneReservation.entity.Seat;
+import airplaneReservation.entity.StopCountry;
+
+public class MainApplication {
+	
+	private static List<Airplane> airplanes = new ArrayList<Airplane>();
+	private static List<Cost> costs = new ArrayList<Cost>();
+			
+	public static void main(String[] args) {
+		
+		while(true) {
+			
+			GetAirplaneListDto dto = new GetAirplaneListDto();
+			
+			if(dto.getDepartureCountry().isBlank() || dto.getArrivalCountry().isBlank()||
+					dto.getDepartureTime().isBlank()) {
+				System.out.println("모두 입력하세요.");
+				continue;
+			}
+		
+			System.out.println(dto.toString());
+		}
+		
+	}
+	
+	//메서드
+	public static void initData() {
+		costs.add(new Cost("대한민국","미국",1_500_000));
+		costs.add(new Cost("대한민국","영국",1_000_000));
+		costs.add(new Cost("대한민국","홍콩",500_000));
+		costs.add(new Cost("미국","영국",500_000));
+		costs.add(new Cost("미국","홍콩",1_000_000));
+		costs.add(new Cost("영국","미국",500_000));
+		costs.add(new Cost("영국","홍콩",1_000_000));
+		
+		costs.add(new Cost("미국","대한민국",1_500_000));
+		costs.add(new Cost("영국","대한민국",1_000_000));
+		costs.add(new Cost("홍콩","대한민국",500_000));
+		costs.add(new Cost("영국","미국",500_000));
+		costs.add(new Cost("홍콩","미국",1_000_000));
+		costs.add(new Cost("미국","영국",500_000));
+		costs.add(new Cost("홍콩","영국",1_000_000));
+		
+		Airplane airplane;
+		List<Seat> seats = new ArrayList<Seat>();
+		List<StopCountry> stopCountrys = new ArrayList<StopCountry>();
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,10 @@
+package reservation.entity;
+
+public class Cost {
+
+	//출발역, 도착역, 금액
+	private String departureStation;
+	private String arrivalStation;
+	private int amount;
+	
+}

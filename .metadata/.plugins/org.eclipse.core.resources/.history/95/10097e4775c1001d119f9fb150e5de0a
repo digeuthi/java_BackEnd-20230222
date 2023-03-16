@@ -1,0 +1,10 @@
+package reservation.entity;
+
+public class StopStation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

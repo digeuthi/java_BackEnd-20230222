@@ -1,0 +1,15 @@
+package chapter5.A_ExceptionHandling;
+
+//예외
+// 오류 중에 개발자가 예측해서 제어할 수 있는 오류
+// 컴파일 및 로직상의 문제는 없지만 사용자의 입력 혹은 타 프로그램의 결과에서
+// 예상치 못한 값을 받아 처리할 때 발생
+
+public class ExceptionHandling {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

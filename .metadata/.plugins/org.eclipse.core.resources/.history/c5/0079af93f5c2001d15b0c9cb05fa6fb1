@@ -1,0 +1,10 @@
+package trainReservation.dto;
+
+public class GetTrainListDto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

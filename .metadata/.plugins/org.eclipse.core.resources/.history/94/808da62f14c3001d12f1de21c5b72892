@@ -1,0 +1,25 @@
+package reservation.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import reservation.entity.Seat;
+
+public class PostReservationDto {
+
+	private String trainNumber;
+	private List<String> seats;
+	
+	public PostReservationDto(int numberOfPeople) {
+	
+	Scanner scanner = new Scanner(System.in);
+	List<Seat> seats = new ArrayList<>(); //입력받을 좌석 리스트 생성
+	
+	//빈값이 아닌지 확인
+	while(true) {
+		System.out.println("탑승할 열차 번호 : ");
+		this.trainNumber = scanner.nextLine();
+	}
+	}
+}

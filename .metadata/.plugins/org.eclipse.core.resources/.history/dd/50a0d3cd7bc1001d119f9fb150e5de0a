@@ -1,0 +1,99 @@
+package reservation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import reservation.entity.Cost;
+import reservation.entity.Seat;
+import reservation.entity.StopStation;
+import reservation.entity.Train;
+
+public class Application {
+	//배열말고 리스트를 통해서 자료 가져옴
+	private static List<Train> trains = new ArrayList<Train>();
+	private static List<Cost> costs = new ArrayList<Cost>();
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public static void initData() {
+		//부산 -> 대구 -> 대전 -> 서울 루트의 값입력
+		
+		//값초기화
+		//상행
+		costs.add(new Cost("부산역", "서울역", 30000));
+		costs.add(new Cost("부산역", "대전역", 20000));
+		costs.add(new Cost("부산역", "대구역", 10000));
+		costs.add(new Cost("대구역", "서울역", 20000));
+		costs.add(new Cost("대구역", "대전역", 10000));
+		costs.add(new Cost("대전역", "서울역", 10000));
+		
+		//하행
+		costs.add(new Cost("서울역", "부산역", 30000));
+		costs.add(new Cost("대전역", "부산역", 20000));
+		costs.add(new Cost("대구역", "부산역", 10000));
+		costs.add(new Cost("서울역", "대구역", 20000));
+		costs.add(new Cost("대전역", "대구역", 10000));
+		costs.add(new Cost("서울역", "대전역", 10000));
+		
+		Train train; //이걸 왜하는걸까..
+		List<Seat> seats = new ArrayList<>();
+		List<StopStation> stopStations = new ArrayList<>();
+		//배열말고 리스트 통해서 자료 가져옴 //Train과 Cost는 static으로 가져왔는데 나머지는 왜 아닐까.
+		
+		seats.add(new Seat(1,"A1",false));
+		seats.add(new Seat(1,"B1",false));
+		seats.add(new Seat(1,"A2",false));
+		seats.add(new Seat(1,"B2",false));
+		seats.add(new Seat(2,"A1",false));
+		seats.add(new Seat(2,"B1",false));
+		seats.add(new Seat(2,"A2",false));
+		seats.add(new Seat(2,"B2",false));
+		seats.add(new Seat(3,"A1",false));
+		seats.add(new Seat(3,"B1",false));
+		seats.add(new Seat(3,"A2",false));
+		seats.add(new Seat(3,"B2",false));
+		
+		//하행
+		stopStations.add(new StopStation("서울역","", "06:00"));
+		stopStations.add(new StopStation("대전역","06:45", "07:00"));
+		stopStations.add(new StopStation("대구역","07:45", "08:00"));
+		stopStations.add(new StopStation("부산역","09:00", ""));
+		
+		//train값 초기화
+		train = new Train("KTX001","서울역","06:00","부산역","09:00",180,"KTX", seats, stopStations);
+		trains.add(train);
+		
+		seats = new ArrayList<>(); // 다시 초기화 하는 이유는 상행과 하행의 열차는 다른 열차니까
+		//상행에 예매좌석변화와 하행 예매좌석 변화는 달라야한다. 그러니까 다시 초기화해서 메모리 주소 가져와서 새 값입력!
+		stopStations = new ArrayList<>();
+		
+		seats.add(new Seat(1,"A1",false));
+		seats.add(new Seat(1,"B1",false));
+		seats.add(new Seat(1,"A2",false));
+		seats.add(new Seat(1,"B2",false));
+		seats.add(new Seat(2,"A1",false));
+		seats.add(new Seat(2,"B1",false));
+		seats.add(new Seat(2,"A2",false));
+		seats.add(new Seat(2,"B2",false));
+		seats.add(new Seat(3,"A1",false));
+		seats.add(new Seat(3,"B1",false));
+		seats.add(new Seat(3,"A2",false));
+		seats.add(new Seat(3,"B2",false));
+		
+		//상행
+		stopStations.add(new StopStation("부산역","", "09:00"));
+		stopStations.add(new StopStation("대구역","09:45", "10:00"));
+		stopStations.add(new StopStation("대전역","10:45", "11:00"));
+		stopStations.add(new StopStation("서울역","12:00", ""));
+		
+		//train값 초기화
+		train = new Train("KTX002", "부산역", "09:00", "서울역", "12:00", 180, "KTX", seats, stopStations);
+		trains.add(train);
+		
+	}
+	
+
+}

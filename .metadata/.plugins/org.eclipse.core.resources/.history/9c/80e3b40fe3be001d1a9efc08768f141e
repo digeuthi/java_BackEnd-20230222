@@ -1,0 +1,43 @@
+package chapter6.A_CollectionClass;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+//Collection Framework  컬렉션 객체
+//배열형태의 데이터를 보다 편하게 사용할 수 있도록 해주는 클래스의 집합
+
+public class CollectionClass {
+
+	public static void main(String[] args) {
+
+		//Set 클래스
+		// 집합의 개념, 중복을 허용하지 않고 순서가 없는 형태
+		//순서가 없기 때문에 인덱스 사용 불가능
+		
+		//Set이 인터페이스로 구성되어 있으므로 구현해주는 작업이 필요하다
+		// HashSet<E> : 중복을 허용하지 않고 순서가 없는 형태
+		// TreeSet<E>
+		Set</*참조타입이 와야함*/Integer> integerSet = new HashSet<Integer>();
+		integerSet.add(4);
+		integerSet.add(1);
+		integerSet.add(2);
+		integerSet.add(5);
+		integerSet.add(1);
+		integerSet.add(6);
+		integerSet.add(3);
+		
+		//iterator : 컬렉션의 요소에 접근해서 반복적인 작업을 할 때 도움을 주는 객체
+		Iterator<Integer> iterator = integerSet.iterator();
+		//이터레이터 사용해서 접근시 보통 while문 쓴다
+		
+		//549812135 이터레이터가 뭉쳐놓고
+		//처음 커서에서 다음에 값이 있는지 확인하는데 hasNext
+		//next는 처음 커서에서 다음 값을 반환해주고 다음 값으로 넘어감
+		
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+	}
+
+}

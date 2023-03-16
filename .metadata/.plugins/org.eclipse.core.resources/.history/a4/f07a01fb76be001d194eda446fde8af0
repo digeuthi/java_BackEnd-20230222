@@ -1,0 +1,50 @@
+package chapter5.B_ApiClass;
+
+import java.util.Random;
+
+public class Lotto {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int[] lotto = new int[6];
+		
+		for(int i = 0 ; i < lotto.length ; i++) {
+			//중복값 체크
+			boolean same = false;
+	
+			int lottoNum = random.nextInt(45) + 1 ; //1~45까지의 수 출력
+			
+			for(int j = 0 ; j < i ; j++) {
+				if(lotto[j]==lottoNum) {
+					same = true;
+				}
+			}
+			if(same) {
+				--i;
+				continue;
+			}
+			lotto[i] = lottoNum;
+		}
+		
+		for(int lottoNumber : lotto) {
+			System.out.println(lottoNumber + " ");
+		}
+		
+		int[] lotto2 = new int[6];
+		for (int i = 0; i < lotto2.length; i++) {
+			lotto2[i] = random.nextInt(45) + 1; 
+			// 중복번호 제거
+			for(int j = 0; j < i; j++) {
+				if(lotto2[i] == lotto2[j]) {
+					i--;
+					break;
+				} 
+			}
+		} 
+		for(int lottoNumber2 : lotto2) {
+			System.out.print(lottoNumber2 + " ");
+		}
+
+	}
+
+}

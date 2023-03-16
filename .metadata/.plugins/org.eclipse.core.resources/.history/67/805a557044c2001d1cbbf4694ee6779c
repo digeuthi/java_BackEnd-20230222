@@ -1,0 +1,5 @@
+package airplaneReservation.dto;
+
+public class GetAirplaneListDto {
+
+}

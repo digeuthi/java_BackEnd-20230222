@@ -1,0 +1,13 @@
+package airplaneReservation.controller;
+
+import java.time.format.DateTimeFormatter;
+
+import airplaneReservation.service.ReservationService;
+
+public class ReservationController {
+
+	private static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+	
+	private ReservationService reservationService;
+	
+}

@@ -1,0 +1,17 @@
+package trainReservation.entity;
+
+public class ReservationInfo {
+
+	private String reservationNumber;
+	private String tarinNumber;
+	seats
+	departureStation
+	departureTime
+	arrivalStation
+	arrivalTime
+	private int totalCost
+	
+	this.UUID
+	
+	//toString
+}

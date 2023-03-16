@@ -1,0 +1,25 @@
+package reservation.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Train {
+
+		private String trainNumber;//열차번호
+		private String departureStation;//출발역
+		private String departureTime; //출발시간
+		private String arrivalStation;//도착역
+		private String arrivalTime;//도착시간
+		private int takeMinute;//걸리는 시간
+		private String type;//열차 종류
+		
+		//Train은 Seat과 StopStation과의 관계성을 가진다
+		private List<Seat> seats;
+		private List<StopStation> stopStations;
+		
+		public Train() {}
+		
+		
+		
+
+}

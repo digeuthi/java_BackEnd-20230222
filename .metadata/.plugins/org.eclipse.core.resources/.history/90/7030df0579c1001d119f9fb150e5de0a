@@ -1,0 +1,19 @@
+package reservation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import reservation.entity.Cost;
+import reservation.entity.Train;
+
+public class Application {
+	//배열말고 리스트를 통해서 자료 가져옴
+	private static List<Train> trains = new ArrayList<Train>();
+	private static List<Cost> costs = new ArrayList<Cost>();
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
