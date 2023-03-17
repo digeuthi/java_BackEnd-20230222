@@ -2,7 +2,9 @@ package board;
 
 import java.util.Scanner;
 
+import board.common.constant.HttpStatus;
 import board.controller.UserController;
+import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
 
 public class BoardApplication {
@@ -21,28 +23,43 @@ public class BoardApplication {
 			switch(endPoint) {
 			
 			case "Post /sign-up" :
-				SignUpDto dto = new SignUpDto();
+				
+				SignUpDto signUpDto = new SignUpDto();
 				System.out.print("이메일 주소 : ");
-				dto.setEmail(scanner.nextLine());
+				signUpDto.setEmail(scanner.nextLine());
 				System.out.println("비밀번호 : ");
-				dto.setPassword(scanner.nextLine());
+				signUpDto.setPassword(scanner.nextLine());
 				System.out.println("비밀번호 확인 : ");
-				dto.setPasswordCheck(scanner.nextLine());
+				signUpDto.setPasswordCheck(scanner.nextLine());
 				System.out.println("닉네임 : ");
-				dto.setNickname(scanner.nextLine());
+				signUpDto.setNickname(scanner.nextLine());
 				System.out.println("전화번호 : ");
-				dto.setPhoneNumber(scanner.nextLine());
+				signUpDto.setPhoneNumber(scanner.nextLine());
 				System.out.println("주소 : ");
-				dto.setAddress(scanner.nextLine());
+				signUpDto.setAddress(scanner.nextLine());
 				System.out.println("상세주소 : ");
-				dto.setAddressDetail(scanner.nextLine());
+				signUpDto.setAddressDetail(scanner.nextLine());
 				
 //				//잘 받아왔는지 확인
 //				System.out.println(dto.toString());
 				
-				userController.signUp(/*데이터*/dto);
+				userController.signUp(/*데이터*/signUpDto);
 				break; //케이스 종료 시키기
-			default : System.out.println("404 Not Found");
+			
+			//로그인 
+			case "POST /sign-in" : 
+				//dto에서 검증받은 값 가져오기 
+				SignInDto signInDto = new SignInDto(); //스위치문 안이라서 dto가 변수이름 중복 적용 안된다
+				System.out.print("이메일 주소 : ");
+				signInDto.setEmail(scanner.nextLine());
+				System.out.print("비밀번호 : ");
+				signInDto.setPassword(scanner.nextLine());
+				
+//				System.out.println(signInDto.toString());
+				
+				userController.singIn(signInDto); //signIn만들어주기..컨트롤러에 만들어줌
+				
+			default : System.out.println(HttpStatus.NOT_FOUND);
 					
 			}
 			

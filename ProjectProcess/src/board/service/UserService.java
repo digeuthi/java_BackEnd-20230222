@@ -1,7 +1,10 @@
 package board.service;
 
+import board.common.constant.ResponseMessage;
+import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
 import board.dto.response.ResponseDto;
+import board.dto.response.user.SignInResponseDto;
 import board.entity.User;
 import board.repository.UserRepository;
 
@@ -23,12 +26,13 @@ public class UserService {
 		//userTable에 있는 요소중에 동일한게 있는지 체크!!
 		boolean hasEmail = userRepository.existsByEmail(email);
 		if(hasEmail)
-			return new ResponseDto<Boolean>(false, "존재하는 이메일 입니다", false);
-		
+			return new ResponseDto<Boolean>(false, ResponseMessage.EXIST_EMAIL, false);
+		//											인터페이스로 구현한 문구 가져옴
+		//인터페이스 사용한 이유인듯 : 메시지 반환할 적에 영어로 적는게 좋다.인코딩 타입이 다르게 되면 깨질수도 있기때문에 영어로 작성하는게 좋다
 		//비밀번호 같은지 확인 //컨트롤이 아니고 서비스에서 확인한다
 		if(!password.equals(passwordCheck)) {
-			System.out.println("비밀번호가 서로 다릅니다");
-			return new ResponseDto<Boolean>(false, "비밀번호가 서로 다릅니다", false);
+			System.out.println(ResponseMessage.PASSWORD_NOT_MATCH);
+			return new ResponseDto<Boolean>(false, ResponseMessage.SUCCESS, false);
 		}
 		
 		
@@ -37,6 +41,12 @@ public class UserService {
 		
 		return new ResponseDto<Boolean>(true, "성공", true);
 		
+	}
+	
+	public ResponseDto<SignInResponseDto> signIn(SignInDto dto){
+		
+		SignInResponseDto data = null;
+		return new ResponseDto<>(true, ResponseMessage.SUCCESS, data);
 	}
 	
 }

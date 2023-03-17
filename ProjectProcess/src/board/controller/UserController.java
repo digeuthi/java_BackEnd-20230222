@@ -1,7 +1,10 @@
 package board.controller;
 
+import board.common.constant.HttpStatus;
+import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
 import board.dto.response.ResponseDto;
+import board.dto.response.user.SignInResponseDto;
 import board.service.UserService;
 
 //검증처리
@@ -22,8 +25,8 @@ public class UserController {
 		
 		if(dto.validate()) { //입력에 대한 검증처리
 			//dto의 validate를 참이면
-			System.out.println("400 Bad Request"); //dto에 선언된 모든 필수값을 받지 못했을때 400이라는 코드를 준다
-			System.out.println("모든 값을 입력하세요");
+			System.out.println(HttpStatus.BAD_REQUEST); //dto에 선언된 모든 필수값을 받지 못했을때 400이라는 코드를 준다
+//			System.out.println("모든 값을 입력하세요");
 			return;
 		}
 		//비밀번호 같은지 다른지 체크는 컨트롤러에서는 안한다 -> 서비스에서한단 이야긴가 ㅇㅇ
@@ -34,4 +37,15 @@ public class UserController {
 		System.out.println(response.toString());
 	}
 	
+	public void singIn(SignInDto dto) {
+		if(dto.validate()) {
+			//빈값이 하나라도 있다
+			System.out.println(HttpStatus.BAD_REQUEST);
+			return;
+		}
+		ResponseDto<SignInResponseDto> response = userService.signIn(dto); //아직 안만들어진 signIn
+		//<?> 해두면 다 받을수 있지만 선생님 굉장히 싫어함 그럴거면 제너릭 쓰지마라..
+		//signIn을 서비스에 만들어둠
+		System.out.println(response.toString());
+	}
 }
