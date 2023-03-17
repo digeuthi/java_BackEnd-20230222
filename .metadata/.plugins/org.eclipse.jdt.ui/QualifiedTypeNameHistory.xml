@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="chapter3.B_VariableMethod.TriangleMath"/>
     <fullyQualifiedTypeName name="chapter4.A_AccessModifier.Example4"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
@@ -11,7 +10,6 @@
     <fullyQualifiedTypeName name="java.time.Month"/>
     <fullyQualifiedTypeName name="java.time.DayOfWeek"/>
     <fullyQualifiedTypeName name="java.time.ZoneId"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.util.TimerTask"/>
     <fullyQualifiedTypeName name="java.util.Timer"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
@@ -49,14 +47,17 @@
     <fullyQualifiedTypeName name="trainReservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="trainReservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="trainReservation.entity.StopStation"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="reservation.entity.Seat"/>
     <fullyQualifiedTypeName name="reservation.dto.GetTrainListDto"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="reservation.entity.Train"/>
-    <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
-    <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="trainReservation.dto.GetReservationDto"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
+    <fullyQualifiedTypeName name="PostReservationDto"/>
+    <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
 </qualifiedTypeNameHistroy>

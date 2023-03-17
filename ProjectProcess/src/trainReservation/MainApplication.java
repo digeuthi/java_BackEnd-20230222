@@ -32,6 +32,7 @@ public class MainApplication {
 			
 			if(endPoint.equals("GET /reservation")) {
 				reservationController.getReservation();
+				//break; 이거 넣으면 실행종료 되는데.. 이거 안넣으면 계속실행이 뜨네..
 			}
 			
 		} //실행되는동안 예약정보 반환할수 있도록 넣어줌

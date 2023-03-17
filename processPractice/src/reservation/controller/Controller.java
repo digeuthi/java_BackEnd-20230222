@@ -11,11 +11,12 @@ import reservation.service.Service;
 import trainReservation.dto.PostReservationDto;
 import trainReservation.service.ReservationService;
 
-public class Controller{
+public class Controller<PostReservationDto>{
 	
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 	
 	private Service reservationService;
+	private PostReservationDto postReservationDto;
 	
 	public Controller() {
 		this.reservationService = new Service();
@@ -55,8 +56,8 @@ public class Controller{
 				System.out.println(getTrainListDto.toString());
 				
 				while(true) {
-					PostReservationDto postReservationDto = new PostReservationDto(getTrainListDto.getNumberOfPeople());
-					reservationInfo = reservationService.postReservation(postReservationDto, getTrainListDto);
+					postReservationDto = new PostReservationDto(getTrainListDto.getNumberOfPeople());
+					ReservationInfo = reservationService.postReservation(postReservationDto, getTrainListDto);
 					if(reservationInfo == null) continue;
 					break;
 				}

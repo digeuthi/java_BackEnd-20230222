@@ -1,0 +1,14 @@
+package board.service;
+
+import board.dto.request.user.SignUpDto;
+
+public class UserService {
+
+	public boolean signUp(SignUpDto dto) {
+		
+		String password = dto.getPassword();
+		String passwordCheck = dto.getPasswordCheck();
+		
+	}
+	
+}

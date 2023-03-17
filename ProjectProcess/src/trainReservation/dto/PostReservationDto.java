@@ -20,7 +20,7 @@ public class PostReservationDto {
 		this.seats = new ArrayList<>();
 		
 		while(true) {
-			System.out.println("탑승할 열차 번호 : ");
+			System.out.print("탑승할 열차 번호 : ");
 			this.trainNumber = scanner.nextLine();
 			
 			if(this.trainNumber.isBlank()) {
@@ -33,7 +33,7 @@ public class PostReservationDto {
 		//좌석을 입력을 받으려면 몇 번 받을지에 대한 값이 필요하다 
 		//생성자로부터 매개변수로 받아오기
 		while(this.seats.size() < numberOfPeople) {
-			System.out.println("좌석 번호 : ");
+			System.out.print("좌석 번호 : ");
 			String seat = scanner.nextLine();
 			if(seat.isBlank()) {
 				System.out.println("좌석번호를 입력하세요");

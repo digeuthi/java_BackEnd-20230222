@@ -1,0 +1,15 @@
+package board;
+
+import board.controller.UserController;
+
+public class BoardApplication {
+
+	private static UserController userController = new UserController();
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}
