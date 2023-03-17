@@ -3,7 +3,6 @@ package board;
 import java.util.Scanner;
 
 import board.common.constant.HttpStatus;
-import board.controller.BoardController;
 import board.controller.UserController;
 import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
@@ -11,8 +10,6 @@ import board.dto.request.user.SignUpDto;
 public class BoardApplication {
 
 	private static UserController userController = new UserController();
-	private static BoardController boardController = new BoardController();
-	
 	
 	private static final String SIGN_UP = "POST /sign-up";
 	private static final String SIGN_IN ="POST /sign-in";

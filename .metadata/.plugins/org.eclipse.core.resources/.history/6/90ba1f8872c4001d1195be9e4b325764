@@ -3,7 +3,6 @@ package board;
 import java.util.Scanner;
 
 import board.common.constant.HttpStatus;
-import board.controller.BoardController;
 import board.controller.UserController;
 import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
@@ -11,11 +10,7 @@ import board.dto.request.user.SignUpDto;
 public class BoardApplication {
 
 	private static UserController userController = new UserController();
-	private static BoardController boardController = new BoardController();
 	
-	
-	private static final String SIGN_UP = "POST /sign-up";
-	private static final String SIGN_IN ="POST /sign-in";
 	
 	public static void main(String[] args) {
 		
@@ -27,7 +22,7 @@ public class BoardApplication {
 			
 			switch(endPoint) {
 			
-			case SIGN_UP :
+			case "Post /sign-up" :
 				
 				SignUpDto signUpDto = new SignUpDto();
 				System.out.print("이메일 주소 : ");
@@ -52,7 +47,7 @@ public class BoardApplication {
 				break; //케이스 종료 시키기
 			
 			//로그인 
-			case SIGN_IN : 
+			case "POST /sign-in" : 
 				//dto에서 검증받은 값 가져오기 
 				SignInDto signInDto = new SignInDto(); //스위치문 안이라서 dto가 변수이름 중복 적용 안된다
 				System.out.print("이메일 주소 : ");

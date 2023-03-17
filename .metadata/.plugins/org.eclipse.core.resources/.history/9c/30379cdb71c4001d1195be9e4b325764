@@ -51,7 +51,7 @@ public class UserService {
 		String email = dto.getEmail();
 		String password = dto.getPassword(); //이메일이랑 비번 가져오기
 		//이메일과 비번이 동일한 유저테이블에서(레포지토리에 있음) 검색
-		User user = userRepository.findByEmail(email);
+		User user = userRespository.findByEmail(email);
 		if(user == null) 
 			return new ResponseDto<>(false, ResponseMessage.FAIL_SIGN_IN, null);
 					

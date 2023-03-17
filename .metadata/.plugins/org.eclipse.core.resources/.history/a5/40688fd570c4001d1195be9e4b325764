@@ -11,19 +11,6 @@ public class UserRepository {
 	private static List<User> userTable = new ArrayList<>();
 	//받은 dto를 유저 entity를 받아서 거친다음에 usertable에 저장되게 한다??
 	
-	public User findByEmail(String email) {
-		User result = null;
-		
-		//이메일 같은거 있는지 찾기
-		for(User user : userTable) {
-			if(user.getEmail().equals(email)) {
-				result = user;
-				break;
-			}
-		}
-		return result;
-	}
-	
 	public boolean existsByEmail(String email) {
 		boolean result = false;
 		for(User user : userTable) {
