@@ -121,7 +121,7 @@ public class ReservationService {
 		
 		//존재하는 열차 변수 지정
 		Train train = null;
-		 
+		//첫번째 for문
 		for (Train trainItem : trains) {
 			if (postReservationDto.isEqualTrainNumber(trainItem.getTrainNumber())) {
 				train = trainItem;

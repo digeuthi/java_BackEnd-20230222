@@ -79,5 +79,11 @@ public class GetAirplaneListDto {
 		return this.departureCountry.equals(arrivalCountry);
 	}
 	
+	public boolean isEqualDepartureCountry(String country) {
+		return this.departureCountry.equals(country);
+	}
 	
+	public boolean isEqualArrivalCountry(String country) {
+		return this.arrivalCountry.equals(country);
+	}
 }

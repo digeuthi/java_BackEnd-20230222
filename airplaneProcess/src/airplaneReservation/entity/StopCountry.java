@@ -8,7 +8,7 @@ public class StopCountry {
 	
 	public StopCountry() {}
 
-	public StopCountry(String countryName, String departureTime, String arrivalTime) {
+	public StopCountry(String countryName, String arrivalTime, String departureTime) {
 		super();
 		this.countryName = countryName;
 		this.departureTime = departureTime;

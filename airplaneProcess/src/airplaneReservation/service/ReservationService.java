@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import airplaneReservation.dto.GetAirplaneListDto;
+import airplaneReservation.dto.GetReservationDto;
+import airplaneReservation.dto.PostReservationDto;
 import airplaneReservation.entity.Airplane;
 import airplaneReservation.entity.Cost;
+import airplaneReservation.entity.ReservationInfo;
 import airplaneReservation.entity.Seat;
 import airplaneReservation.entity.StopCountry;
 
@@ -93,6 +96,77 @@ public class ReservationService {
 	}
 	return possibleAirplanes;
 }
+	
+	//'예약정보 객체'로 반환을 해줘야하는 2번째 다이어그램 데이터 검색관련 반복문들! reservationInfo를 반환타입으로 지정한다.
+	public ReservationInfo postReservation(PostReservationDto postReservationDto, GetAirplaneListDto getAirplaneListDto) {
+		
+		//존재하는 비행기 변수 설정
+		Airplane airplane = null;
+		//데이터검색 첫번째 for문
+		for(Airplane airplaneItem : airplanes) {
+			if(postReservationDto.isEqualAriplaneNumber(airplaneItem.getAirplaneNumber())) {
+				airplane = airplaneItem; //존재하는 비행기 변수에 해당 요소 저장
+				break;
+			}
+		}
+		
+		if(airplane == null) {
+			System.out.println("존재하지 않는 비행기 번호 입니다");
+			return null;
+		}
+		
+		//좌석 지정 상태
+		boolean designationState = false;
+		
+		List<Seat> seats = airplane.getSeats();
+		List<String> inputSeatNumbers = postReservationDto.getSeats();
+		//두번째 for문
+		for(int index = 0 ; index < seats.size() ; index++) {
+			//해당 인덱스의 좌석 정보 가져오기
+			Seat seat = seats.get(index);
+			
+			for(String seatNumber : inputSeatNumbers) {
+				
+				if(!seat.getSeatNumber().equals(seatNumber)) {
+					continue;
+				}
+				
+				if(seat.isSeatStatus()) {
+					designationState = false;
+					break;
+				}
+				
+				//seat entity에 set추가함
+				seat.setSeatStatus(true);
+				
+			}
+			if(!designationState) break;
+		}
+		if(!designationState) {
+			System.out.println("좌석 배정에 실패했습니다");
+			return null;
+		}
+		
+		//가격 지정할 변수
+		int totalCost = 0;
+		
+		//세번째 for문
+		for(Cost cost : costs) {
+			//해당 요소의 출발역과 도착역이 지정한 출발역과 도착역과 같은지?를 비교하기 위해 GetAirplaneListDto에 메서드 추가
+			boolean isEqualDepartureCountry=
+					getAirplaneListDto.isEqualDepartureCountry(cost.getDepartureCountry());
+			boolean isEqualArrivalCountry =
+					getAirplaneListDto.isEqualArrivalCountry(cost.getArrivalCountry());
+			
+			if(!isEqualDepartureCountry || !isEqualArrivalCountry) continue;
+			
+			totalCost = cost.getAmount() * getAirplaneListDto.getNumberOfPeople();
+			break;
+		}
+		
+		//예약번호 reservationInfo entity에 생성
+		
+	}
 
 		
 		//메서드

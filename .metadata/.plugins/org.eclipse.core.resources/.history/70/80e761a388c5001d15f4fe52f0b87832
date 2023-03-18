@@ -1,0 +1,17 @@
+package airplaneReservation.dto;
+
+import java.util.List;
+import java.util.Scanner;
+
+import airplaneReservation.entity.Seat;
+
+public class PostReservationDto {
+
+	private String airplaneNumber;
+	private List<Seat> seats;
+	
+	public PostReservationDto(int numberOfPeople) {
+		Scanner scanner = new Scanner(System.in);
+		
+	}
+}
