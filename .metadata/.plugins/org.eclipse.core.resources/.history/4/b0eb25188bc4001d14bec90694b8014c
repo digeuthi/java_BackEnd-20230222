@@ -64,7 +64,6 @@ public class BoardApplication {
 //				System.out.println(signInDto.toString());
 				
 				userController.singIn(signInDto); //signIn만들어주기..컨트롤러에 만들어줌
-				break;
 				
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					

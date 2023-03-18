@@ -39,9 +39,6 @@
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="trainReservation.dto.GetReservationDto"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
-    <fullyQualifiedTypeName name="PostReservationDto"/>
-    <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="board.service.UserService"/>
     <fullyQualifiedTypeName name="board.controller.UserController"/>
@@ -49,7 +46,6 @@
     <fullyQualifiedTypeName name="board.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="board.common.constant.HttpStatus"/>
     <fullyQualifiedTypeName name="board.common.constant.ResponseMessage"/>
-    <fullyQualifiedTypeName name="board.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="board.dto.response.user.SignInResponseDto"/>
     <fullyQualifiedTypeName name="board.dto.request.user.SignInDto"/>
@@ -60,4 +56,8 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="board.entity.Board"/>
+    <fullyQualifiedTypeName name="board.dto.request.user.SignUpDto"/>
+    <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
+    <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
+    <fullyQualifiedTypeName name="PostReservationDto"/>
 </qualifiedTypeNameHistroy>

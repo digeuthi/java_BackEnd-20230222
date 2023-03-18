@@ -14,7 +14,7 @@ import trainReservation.service.ReservationService;
 public class Controller<PostReservationDto>{
 	
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
-	private GetTrainListDto getTrainListDto;
+	
 	private Service reservationService;
 	private PostReservationDto postReservationDto;
 	
@@ -25,7 +25,7 @@ public class Controller<PostReservationDto>{
 	public void reservation() {
 			while(true) {
 				
-				getTrainListDto = new GetTrainListDto();
+				GetTrainListDto getTrainListDto = new GetTrainListDto();
 				
 				LocalTime departureTime = null;
 				
