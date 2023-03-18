@@ -57,7 +57,7 @@ public class ReservationService {
 		}
 		//좌석요소
 		boolean isPossibleSeats = false;
-		//도착국가 요소와 같은지 반복문
+		//도착역 요소와 같은지 반복문
 		for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
 			
 			String countryName = stopCountrys.get(stopCountryIndex).getCountryName();
@@ -88,7 +88,7 @@ public class ReservationService {
 		if(possibleSeatCount < dto.getNumberOfPeople()) {
 			continue;
 		}
-		//가능한 비행기 리스트에 해당 비행기 객체 추가
+		
 		possibleAirplanes.add(airplane);
 	}
 	return possibleAirplanes;
