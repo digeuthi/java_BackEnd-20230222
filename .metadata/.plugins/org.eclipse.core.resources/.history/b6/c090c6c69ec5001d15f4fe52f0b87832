@@ -65,21 +65,4 @@ public class ReservationController {
 		
 	}
 	
-	public void getReservation() {
-		
-		//3단계 예약 번호가 빈값이 아닌지 ?
-		while(true) {
-		//입력받은 예약번호 가져오기
-			getReservationDto = new GetReservationDto();
-			
-			String reservationNumber = getReservationDto.getReservationNumber();
-			
-			if(reservationNumber.isBlank()) {
-				System.out.println("예약 번호를 입력하세요");
-				continue;
-			}
-			
-			//이 다음 과정은 service에서 진행
-		}
-	}
 }

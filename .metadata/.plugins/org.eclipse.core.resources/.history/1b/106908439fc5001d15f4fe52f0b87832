@@ -78,8 +78,6 @@ public class ReservationController {
 				System.out.println("예약 번호를 입력하세요");
 				continue;
 			}
-			
-			//이 다음 과정은 service에서 진행
 		}
 	}
 }

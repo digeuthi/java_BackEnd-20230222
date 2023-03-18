@@ -18,7 +18,6 @@ public class ReservationService {
 
 	private static List<Airplane> airplanes = new ArrayList<Airplane>();
 	private static List<Cost> costs = new ArrayList<Cost>();
-	private static List<ReservationInfo> reservations = new ArrayList<>();
 	
 	private static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 	
@@ -164,31 +163,9 @@ public class ReservationService {
 			totalCost = cost.getAmount() * getAirplaneListDto.getNumberOfPeople();
 			break;
 		}
-	}
-	
-	//예약번호 reservationNumber, reservationInfo entity에 생성
-	//controller에서 진행 후 돌아옴
-	//3번째 다이어그램 진행 		
-	public ReservationInfo getReservation(GetReservationDto getReservationDto) {
 		
-		//예약번호를 저장할 변수
-		ReservationInfo reservationInfo = null;
-		String reservationNumber = getReservationDto.getReservationNumber();
+		//예약번호 reservationNumber, reservationInfo entity에 생성
 		
-		//예약번호 가져오는 반복문
-		for(ReservationInfo item : reservations) {
-			
-			boolean isEqualReservationNumber =
-					reservationNumber.equals(item.getReservationNumber());
-			
-			if(!isEqualReservationNumber) continue;
-			
-			//같은 경우 
-			reservationInfo = item;
-			break;
-		}
-		
-		return reservationInfo;
 	}
 
 		
