@@ -55,7 +55,7 @@ public class ReservationService {
 		if(sameCountryIndex == -1) {
 			continue;
 		}
-		//좌석요소
+		
 		boolean isPossibleSeats = false;
 		
 		for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
