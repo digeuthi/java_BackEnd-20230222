@@ -3,7 +3,7 @@ package airplaneReservation;
 import java.util.Scanner;
 
 import airplaneReservation.controller.ReservationController;
-import airplaneReservation.controller.*;
+
 public class MainApplication {
 	
 //	private static List<Airplane> airplanes = new ArrayList<Airplane>();
