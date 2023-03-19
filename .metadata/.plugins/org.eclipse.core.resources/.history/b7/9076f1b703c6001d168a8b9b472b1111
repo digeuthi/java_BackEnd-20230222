@@ -13,7 +13,7 @@ import airplaneReservation.entity.Cost;
 import airplaneReservation.entity.ReservationInfo;
 import airplaneReservation.entity.Seat;
 import airplaneReservation.entity.StopCountry;
-
+import trainReservation.entity.StopStation;
 
 public class ReservationService {
 
@@ -29,75 +29,75 @@ public class ReservationService {
 	
 	public List<Airplane> getPossibleAirplaneList(GetAirplaneListDto dto, LocalTime departureTime){
 	
-		//가능한 기체정보를 저장할 리스트
-		List<Airplane> possibleAirplanes = new ArrayList<>();
+	//가능한 기체정보를 저장할 리스트
+	List<Airplane> possibleAirplanes = new ArrayList<>();
 	
-		//해당 인덱스 정착국가 인덱스
-		for(Airplane airplane : airplanes) {
-			List<StopCountry> stopCountrys = airplane.getStopCountrys();
+	//해당 인덱스 정착국가 인덱스
+	for(Airplane airplane : airplanes) {
+		List<StopCountry> stopCountrys = airplane.getStopCountrys();
+		
+		//동일한 출발국가 인덱스 번호 변수 만들어주기
+		int sameCountryIndex = -1;
+		
+		for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
 			
-			//동일한 출발국가 인덱스 번호 변수 만들어주기
-			int sameCountryIndex = -1;
+			StopCountry stopStation = stopCountrys.get(stopCountryIndex);
+			String stopCountryName = stopCountrys.get(stopCountryIndex).getCountryName();
 			
-			for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
-				
-				StopCountry stopStation = stopCountrys.get(stopCountryIndex);
-				String stopCountryName = stopCountrys.get(stopCountryIndex).getCountryName();
-				
-				if(!airplane.getDepartureCountry().equals(stopCountryName)) {
-					continue;
-				}
-				
-				LocalTime countryDepartureTime = LocalTime.parse(dto.getDepartureTime(), dateTimeFormatter);
-				
-				if(countryDepartureTime.isBefore(departureTime)) {
-					break;
-				}
-				
-				sameCountryIndex = stopCountryIndex;
+			if(!airplane.getDepartureCountry().equals(stopCountryName)) {
+				continue;
+			}
+			
+			LocalTime countryDepartureTime = LocalTime.parse(dto.getDepartureTime(), dateTimeFormatter);
+			
+			if(countryDepartureTime.isBefore(departureTime)) {
 				break;
 			}
 			
-			if(sameCountryIndex == -1) {
-				continue;
-			}
-			//좌석요소
-			boolean isPossibleSeats = false;
-			//도착국가 요소와 같은지 반복문
-			for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
-				
-				String countryName = stopCountrys.get(stopCountryIndex).getCountryName();
-				
-				if(!dto.getArrivalCountry().equals(countryName)){
-					continue;
-				}
-				
-				if(stopCountryIndex <= sameCountryIndex) {
-					break;
-				}
-				
-				isPossibleSeats = true;
-				break;
-			}
-			if(!isPossibleSeats) {
-				continue;
-			}
-			
-			List<Seat> seats = airplane.getSeats();
-			
-			int possibleSeatCount = 0;
-			
-			for(Seat seat : seats) {
-				if(!seat.isSeatStatus()) continue;
-			}
-			
-			if(possibleSeatCount < dto.getNumberOfPeople()) {
-				continue;
-			}
-			//가능한 비행기 리스트에 해당 비행기 객체 추가
-			possibleAirplanes.add(airplane);
+			sameCountryIndex = stopCountryIndex;
+			break;
 		}
-		return possibleAirplanes;
+		
+		if(sameCountryIndex == -1) {
+			continue;
+		}
+		//좌석요소
+		boolean isPossibleSeats = false;
+		//도착국가 요소와 같은지 반복문
+		for(int stopCountryIndex = 0 ; stopCountryIndex < stopCountrys.size() ; stopCountryIndex++) {
+			
+			String countryName = stopCountrys.get(stopCountryIndex).getCountryName();
+			
+			if(!dto.getArrivalCountry().equals(countryName)){
+				continue;
+			}
+			
+			if(stopCountryIndex <= sameCountryIndex) {
+				break;
+			}
+			
+			isPossibleSeats = true;
+			break;
+		}
+		if(!isPossibleSeats) {
+			continue;
+		}
+		
+		List<Seat> seats = airplane.getSeats();
+		
+		int possibleSeatCount = 0;
+		
+		for(Seat seat : seats) {
+			if(!seat.isSeatStatus()) continue;
+		}
+		
+		if(possibleSeatCount < dto.getNumberOfPeople()) {
+			continue;
+		}
+		//가능한 비행기 리스트에 해당 비행기 객체 추가
+		possibleAirplanes.add(airplane);
+	}
+	return possibleAirplanes;
 }
 	
 	//'예약정보 객체'로 반환을 해줘야하는 2번째 다이어그램 데이터 검색관련 반복문들! reservationInfo를 반환타입으로 지정한다.
@@ -174,9 +174,9 @@ public class ReservationService {
 		for(StopCountry stopsCountry : airplane.getStopCountrys()) {
 			
 			boolean isEqualDepartureCountry =
-					getAirplaneListDto.isEqualDepartureCountry(airplane.getCountryName);
+					getAirplaneListDto.isEqualDepartureCountry(airplane.getStopCountrys());
 			boolean isEqualArrivalCountry=
-					getAirplaneListDto.isEqualArrivalCountry(airplane.getCountryName);
+					getAirplaneListDto.isEqualArrivalCountry(airplane.getStopCountrys());
 			
 			if(isEqualDepartureCountry) departureTime = stopsCountry.getDepartureTime();
 			if(isEqualArrivalCountry) arrivalTime = stopsCountry.getArrivalTime();

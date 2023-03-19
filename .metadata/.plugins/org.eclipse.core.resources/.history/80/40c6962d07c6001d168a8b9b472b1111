@@ -174,9 +174,9 @@ public class ReservationService {
 		for(StopCountry stopsCountry : airplane.getStopCountrys()) {
 			
 			boolean isEqualDepartureCountry =
-					getAirplaneListDto.isEqualDepartureCountry(airplane.getCountryName);
+					getAirplaneListDto.isEqualDepartureCountry(airplane.getStopCountrys());
 			boolean isEqualArrivalCountry=
-					getAirplaneListDto.isEqualArrivalCountry(airplane.getCountryName);
+					getAirplaneListDto.isEqualArrivalCountry(airplane.getStopCountrys());
 			
 			if(isEqualDepartureCountry) departureTime = stopsCountry.getDepartureTime();
 			if(isEqualArrivalCountry) arrivalTime = stopsCountry.getArrivalTime();

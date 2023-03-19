@@ -25,7 +25,7 @@ public class MainApplication {
 				reservationController.reservation();
 			}
 			if(endPoint.equals("GET /reservation")) {
-				reservationController.getReservation();
+				reservationController.reservation();
 			}
 		}
 		//reservationController.reservation();

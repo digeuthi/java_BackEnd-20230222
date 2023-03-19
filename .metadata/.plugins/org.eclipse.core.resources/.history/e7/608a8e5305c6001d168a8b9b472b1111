@@ -8,7 +8,6 @@ import airplaneReservation.dto.GetAirplaneListDto;
 import airplaneReservation.dto.GetReservationDto;
 import airplaneReservation.dto.PostReservationDto;
 import airplaneReservation.entity.Airplane;
-import airplaneReservation.entity.ReservationInfo;
 import airplaneReservation.service.ReservationService;
 
 public class ReservationController {
@@ -81,21 +80,6 @@ public class ReservationController {
 			}
 			
 			//이 다음 과정은 service에서 진행
-			
-			//외부에서 데이터를 받아올때 (인스턴스 생성해서) 그때 받아올때도 검증을 해줘야한다.
-//			//결과가 늘 인스턴스가 생성되서 온다는 경우가 보장안된다 null로 올수도 있다.
-//			//이때 예외가 터져버린다 null이 들어오는 경우를 생각해줘야한다
-			
-			ReservationInfo reservationInfo = reservationService.getReservation(getReservationDto);
-			
-			if(reservationInfo == null) {
-				System.out.println("해당 예약번호의 예약정보가 없습니다");
-				break;
-			}
-			
-			System.out.println(reservationInfo.toString());
-			break;
-			
 		}
 	}
 }
