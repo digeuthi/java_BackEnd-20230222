@@ -1,7 +1,13 @@
 package board.entity;
 //게시물
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import board.dto.request.board.PostBoardDto;
+import board.repository.BoardRepository;
 
 //'게시물 번호'(구분요소)(우리가 지정한거라 우리가 정하면된다. 정수형태), 
 //이미지(문자열),'작성자 이메일'(구분요소)(문자열), 작성자 닉네임(문자열), 작성자 프로필사진(문자열), 
@@ -48,6 +54,22 @@ public class Board {
 		this.commentList = commentList;
 	}
 
+	public Board(PostBoardDto dto, User user) {
+		Date now = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyy-MM-dd");
+		
+		this.boardNumber = ++BoardRepository.index; //보드 번호는 BoardRepository에서 만든다
+		this.boardImageUrl = dto.getBoardImageUrl();
+		this.writerEmail = user.getEmail();
+		this.writerNickname = user.getNickName();
+		this.writerProfileImageUrl = user.getProfileImageUrl();
+		this.writeDate = simpleDateFormat.format(now);//생성하는 날짜 지정
+		this.title = dto.getTitle();
+		this.content = dto.getContent();
+		this.viewCount = 0;
+		this.likeList = new ArrayList<>(); //처음 글 생성하면 빈 리스트가 되므로
+		this.commentList = new ArrayList<>();
+	}
 
 	public int getBoardNumber() {
 		return boardNumber;

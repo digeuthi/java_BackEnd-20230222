@@ -6,6 +6,9 @@ public interface HttpStatus {
 		//변수를 담는 공간을 만들어줄수 있다 구현부로는 쓰지못하지만
 		//상수를 선언해주려면 public static final 대문자 !
 		public static final String BAD_REQUEST = "400 Bad Request";
+		public static final String UNAUTHORIZED = "401 Unauthorized";
 		public static final String NOT_FOUND = "404 Not Found";
+		
+		
 	
 }

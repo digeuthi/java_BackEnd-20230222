@@ -55,12 +55,16 @@ public class PostBoardDto {
 		return "PostBoardDto [title=" + title + ", content=" + content + ", boardImageUrl=" + boardImageUrl
 				+ ", writerEmail=" + writerEmail + "]";
 	}
-	
+	//게시물에 제목입력 내용입력, 로그인한 사람이 작성하고 있는지 검증하기위한 메서드
 	public boolean vaild() {
-		
+		boolean result =
+				this.title.isBlank() ||
+				this.content.isBlank();
+		return result;
 	}
 	
 	public boolean auth() {
-		
+		boolean result = this.writerEmail.isBlank();
+		return result;
 	}
 }

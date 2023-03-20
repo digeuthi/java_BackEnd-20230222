@@ -17,7 +17,15 @@ public class BoardApplication {
 	
 	private static final String SIGN_UP = "POST /sign-up";
 	private static final String SIGN_IN ="POST /sign-in";
+	
 	private static final String POST_BOARD = "POST /board";
+	
+	private static final String GET_BOARD_LIST = "GET /board/list";
+	private static final String GET_BOARD = "GET /board";
+	
+	private static final String PATCH_BOARD ="PATH /board";
+	
+	private static final String DELETE_BOARD = "DELETE /board";
 	
 	public static void main(String[] args) {
 		
@@ -80,8 +88,40 @@ public class BoardApplication {
 				postBoardDto.setWriterEmail(scanner.nextLine());
 				
 				//입력받은후 컨트롤러에 넘겨서 검증
+				boardController.postBoard(postBoardDto);
+				break;
 				
+			case GET_BOARD_LIST :
+				//전체 리스트를 받아올거다.. 
+				//아무것도 입력받을 필요없이 보여주면 된다?
+				boardController.getBoardList();
 				
+				break;
+				
+				//특정한 하나의 게시물 받아오기
+			case GET_BOARD :
+				//사용자가 선택해서 가져온것이므로 특정한 게시물의 번호를 넘겨줘야 같이 전달해줄수 있다.
+				//get 과 delete는 dto를 만들지 않고 바로 가져온다
+				
+				//사용자로부터 입력을 받아온다. 외부에서 내부로 데이터가 넘어오는것
+				//근데 우리는 정수로 받아온다. 정수를 받는 메서드를 만들었고 nextInt라는 메서드는
+				//반환타입이 integer로 지정되어있다 그래서 우리가 컴파일 상에는 아무런 문제가 없다 
+				//사람이 무조건 정수로만 입력을 하지는 않는다? 외부에서 들어오는건 정수로 무조건 들어오지않을수있다
+				//예외적 상황! 예외처리 try catch 사용!
+				
+				int boardNumber = 0;
+				
+				try {
+					System.out.print("게시물 번호 : ");
+					boardNumber = scanner.nextInt();
+				}catch(Exception exception) {
+					exception.printStackTrace(); //콘솔에  빨간줄 그이게 표시
+					continue;
+				}
+				
+				boardController.getBoard(boardNumber); //boardNumber에 빨간줄 그인 이유는? 
+														//try문 안에 지역변수로 있어서 빨간줄! case문쪽으로 빼면 된다.
+			
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					
 			}

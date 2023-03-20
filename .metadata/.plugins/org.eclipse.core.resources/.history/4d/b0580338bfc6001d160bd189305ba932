@@ -1,0 +1,26 @@
+package board.service;
+
+import board.dto.request.board.PostBoardDto;
+import board.dto.response.ResponseDto;
+import board.dto.response.board.PostBoardResponseDto;
+import board.entity.Board;
+import board.entity.User;
+import board.repository.BoardRepository;
+import board.repository.UserRepository;
+
+public class BoardService {
+	
+	private BoardRepository boardRepository;
+	private UserRepository userRepository;
+	public BoardService() {
+		boardRepository = new BoardRepository();
+		userRepository = new UserRepository();
+	}
+	
+	public ResponseDto<PostBoardResponseDto> postBoard(PostBoardDto dto){
+		
+		User user = userRepository.findByEmail(null)/*유저 레포지토리에서 받아옴*/ 
+		Board board = new Board(dto, user);
+		
+	}
+}

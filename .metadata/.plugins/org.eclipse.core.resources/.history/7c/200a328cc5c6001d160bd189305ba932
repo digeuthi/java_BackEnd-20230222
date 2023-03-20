@@ -1,0 +1,23 @@
+package board.dto.response.board;
+
+public class GetBoardListResponseDto {
+
+	//하나의 요소값 넣어주기.. 최신 게시물화면이 가져와야할것
+	//댓글수 좋아요수 조회수  .. 8개 가져와야함.
+	
+	private int boardNumber;
+	private String writerProfileImageUrl;
+	private String writerNickname;
+	private String writerDate;
+	private String title;
+	private String content;
+	private String boardImageUrl;
+	private int commentCount;
+	private int likeCount;
+	private int viewCount;
+	
+	//화면에 보이는것만 데이터로 관리하면 되나? 기능상에 대한것도 봐야한다
+	//게시물을 클릭하면 그게 뭔지 보여줘야하니까 게시글을 구분하는것도 구현해줘야한다
+	//특정 게시물 정의해주는게 boardNumber !
+	
+}

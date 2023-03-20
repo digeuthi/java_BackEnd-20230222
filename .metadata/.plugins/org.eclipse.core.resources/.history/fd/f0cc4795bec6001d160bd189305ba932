@@ -1,0 +1,19 @@
+package board.service;
+
+import board.dto.response.ResponseDto;
+import board.dto.response.board.PostBoardResponseDto;
+import board.repository.BoardRepository;
+
+public class BoardService {
+	
+	private BoardRepository boardRepository;
+	
+	public BoardService() {
+		boardRepository = new BoardRepository();
+		
+	}
+	
+	public ResponseDto<PostBoardResponseDto> postBoard(PostBoardResponseDto dto){
+		
+	}
+}
