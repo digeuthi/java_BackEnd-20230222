@@ -54,9 +54,9 @@ public class BoardService {
 		GetBoardResponseDto data = null;
 		
 		Board board = boardRepository.findByBoardNumber(boardNumber);
-		if(board == null) return new ResponseDto<>(false, ResponseMessage.NOT_EXIST_BOARD, null);
+		if(board == null) new ResponseDto<>(false, ResponseMessage.NOT_EXIST_BOARD, null);
 		
-		data = new GetBoardResponseDto(board);
-		return new ResponseDto<>(true, ResponseMessage.SUCCESS, data);
+		
+		return new ResponseDto(true, ResponseMessage.SUCCESS, data);
 	}
 }

@@ -11,20 +11,9 @@ public class BoardRepository {
 	
 	private static List<Board> boardTable = new ArrayList<>();
 	
-	public Board save(Board board) { //조회수 카운트...구현 , 입력하고 작성하는걸 save로 구현한다
-		//존재하면 board에 값을 갈아끼운다..
-		boolean isExist = false;
-		
-		for(int index = 0; index < boardTable.size(); index++) {
-			Board boardItem = boardTable.get(index);
-			if(boardItem.getBoardNumber() == board.getBoardNumber()) {
-				boardTable.set(index, board);
-				isExist = true;
-				break;
-			}
-		}
-		//값이 존재하지않으면 add
-		if(!isExist) boardTable.add(board);
+	public Board save(Board board) { //조회수 카운트...구현
+		//값이 존재하지않으면 add, 존재하면 board에 값을 갈아끼운다..
+		boardTable.add(board);
 		return board;
 	}
 	

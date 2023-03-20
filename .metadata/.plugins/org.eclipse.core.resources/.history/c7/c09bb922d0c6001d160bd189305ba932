@@ -6,7 +6,6 @@ import board.common.constant.HttpStatus;
 import board.dto.request.board.PostBoardDto;
 import board.dto.response.ResponseDto;
 import board.dto.response.board.GetBoardListResponseDto;
-import board.dto.response.board.GetBoardResponseDto;
 import board.dto.response.board.PostBoardResponseDto;
 import board.service.BoardService;
 
