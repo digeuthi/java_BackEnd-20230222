@@ -68,7 +68,7 @@ public class BoardApplication {
 				userController.singIn(signInDto); //signIn만들어주기..컨트롤러에 만들어줌
 				break;
 				
-			case POST_BOARD: //PostBoardDto생성후 입력받게함
+			case POST_BOARD: //PostBoardDto생성
 				PostBoardDto postBoardDto = new PostBoardDto();
 				System.out.print("제목 : ");
 				postBoardDto.setTitle(scanner.nextLine());
@@ -78,9 +78,6 @@ public class BoardApplication {
 				postBoardDto.setBoardImageUrl(scanner.nextLine());
 				System.out.print("작성자 이메일 : ");
 				postBoardDto.setWriterEmail(scanner.nextLine());
-				
-				//입력받은후 컨트롤러에 넘겨서 검증
-				
 				
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					

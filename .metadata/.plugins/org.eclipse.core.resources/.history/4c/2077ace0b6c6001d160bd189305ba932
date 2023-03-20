@@ -18,7 +18,7 @@ public class Board {
 	private String writerProfileImageUrl;
 	private String writeDate; //우리가 지정
 	private String title; //사용자 입력
-	private String content; //사용자 입력 -> BoardApplication에 적용? POST_BOARD
+	private String content; //사용자 입력
 	
 	//댓글수와 좋아요수 정의하지 않고 관리할수 있나? ㅇㅇ..
 	//리스트 넣게될때 필요하면 size반환하는걸로 만들자 

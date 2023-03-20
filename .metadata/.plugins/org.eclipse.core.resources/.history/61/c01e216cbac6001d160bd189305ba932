@@ -81,7 +81,6 @@ public class BoardApplication {
 				
 				//입력받은후 컨트롤러에 넘겨서 검증
 				
-				
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					
 			}

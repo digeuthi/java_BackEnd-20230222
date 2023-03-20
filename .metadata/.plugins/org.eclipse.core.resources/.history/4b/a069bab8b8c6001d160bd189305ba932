@@ -1,0 +1,20 @@
+package board.controller;
+
+import board.dto.request.board.PostBoardDto;
+import board.service.BoardService;
+
+public class BoardController {
+
+	private BoardService boardService;
+	
+	
+	public BoardController() {
+		boardService = new BoardService();
+		
+	}
+	//게시물 입력받은것 검증
+	public void postBoard(PostBoardDto dto) {
+		//두가지의 검증
+	}
+	
+}
