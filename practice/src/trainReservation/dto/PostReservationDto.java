@@ -9,7 +9,7 @@ import trainReservation.entity.Seat;
 public class PostReservationDto {
 
 	private String trainNumber;
-	private List<Seat> seats;
+	private List<String> seats;
 	
 	public PostReservationDto(int numberOfPeople) {
 		
@@ -40,7 +40,7 @@ public class PostReservationDto {
 		
 	}
 
-	public PostReservationDto(String trainNumber, List<Seat> seats) {
+	public PostReservationDto(String trainNumber, List<String> seats) {
 		super();
 		this.trainNumber = trainNumber;
 		this.seats = seats;
@@ -50,7 +50,7 @@ public class PostReservationDto {
 		return trainNumber;
 	}
 
-	public List<Seat> getSeats() {
+	public List<String> getSeats() {
 		return seats;
 	}
 
@@ -58,7 +58,7 @@ public class PostReservationDto {
 		this.trainNumber = trainNumber;
 	}
 
-	public void setSeats(List<Seat> seats) {
+	public void setSeats(List<String> seats) {
 		this.seats = seats;
 	}
 
