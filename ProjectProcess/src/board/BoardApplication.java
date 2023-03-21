@@ -5,6 +5,7 @@ import java.util.Scanner;
 import board.common.constant.HttpStatus;
 import board.controller.BoardController;
 import board.controller.UserController;
+import board.dto.request.board.PatchBoardDto;
 import board.dto.request.board.PostBoardDto;
 import board.dto.request.user.SignInDto;
 import board.dto.request.user.SignUpDto;
@@ -20,8 +21,8 @@ public class BoardApplication {
 	
 	private static final String POST_BOARD = "POST /board";
 	
-	private static final String GET_BOARD_LIST = "GET /board/list";
-	private static final String GET_BOARD = "GET /board";
+	private static final String GET_BOARD_LIST = "GET /board/list"; //게시물 리스트형태로 불러오기
+	private static final String GET_BOARD = "GET /board"; //게시물하나 불러오기
 	
 	private static final String PATCH_BOARD ="PATH /board";
 	
@@ -121,6 +122,32 @@ public class BoardApplication {
 				
 				boardController.getBoard(boardNumber); //boardNumber에 빨간줄 그인 이유는? 
 														//try문 안에 지역변수로 있어서 빨간줄! case문쪽으로 빼면 된다.
+				break;
+				
+			case PATCH_BOARD: //게시물 수정
+				
+				PatchBoardDto patchBoardDto = new PatchBoardDto();
+				try {
+					System.out.print("게시물 번호 : ");
+					String boardNumberString = scanner.nextLine(); //스위치에서 보드넘버 중복뜸
+					patchBoardDto.setBoardNumber(Integer.parseInt(boardNumberString)); //문자열을 숫자 정수로 바꿔줌
+													//일반적 정수형태가 아니라 문자열로 들어와서 예외가 터질수있다.
+					System.out.print("제목 : "); //아마 에러가 뜰것..? nextInt다음 문자열 오면 에러가 된다 -> 수정
+					patchBoardDto.setTitle(scanner.nextLine());
+					System.out.print("내용 : ");
+					patchBoardDto.setContent(scanner.nextLine());
+					System.out.print("이미지 : ");
+					patchBoardDto.setBoardImageUrl(scanner.nextLine());
+					System.out.print("이메일 : ");
+					patchBoardDto.setEmail(scanner.nextLine());
+				} catch(Exception exception) {
+					System.out.println(HttpStatus.NOT_FOUND);
+					continue;
+				}
+				
+				boardController.patchBoard(patchBoardDto); //patchBoard만들어주러 가기 컨트롤러에!
+				
+				break;
 			
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					

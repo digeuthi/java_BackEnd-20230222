@@ -3,10 +3,12 @@ package board.controller;
 import java.util.List;
 
 import board.common.constant.HttpStatus;
+import board.dto.request.board.PatchBoardDto;
 import board.dto.request.board.PostBoardDto;
 import board.dto.response.ResponseDto;
 import board.dto.response.board.GetBoardListResponseDto;
 import board.dto.response.board.GetBoardResponseDto;
+import board.dto.response.board.PatchBoardResponseDto;
 import board.dto.response.board.PostBoardResponseDto;
 import board.service.BoardService;
 
@@ -53,9 +55,27 @@ public class BoardController {
 		if(boardNumber <= 0) {
 			System.out.println(HttpStatus.BAD_REQUEST);
 			return;
-		}
+		}    
 		ResponseDto<GetBoardResponseDto> response = boardService.getBoard(boardNumber);
 		System.out.println(response.toString());
 	}
+	
+	//검증처리
+	public void patchBoard(PatchBoardDto dto) {
+		if(dto.auth()) {
+			System.out.println(HttpStatus.UNAUTHORIZED);
+			return;
+		}
+		if(dto.valid()) {
+			System.out.println(HttpStatus.BAD_REQUEST);
+			return;
+		}
+		
+		ResponseDto<PatchBoardResponseDto> response =
+				boardService.patchBoard(dto);
+		System.out.println(response.toString());
+	}
+	
+	
 	
 }

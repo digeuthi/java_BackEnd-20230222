@@ -1,6 +1,0 @@
-package reservation.dto;
-
-public class GetTrainList {
-
-	//출발역, 도착역, 도착시간, 인원을 입력받는다
-}

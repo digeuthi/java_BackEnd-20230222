@@ -189,5 +189,11 @@ public class Board {
 				+ ", likeList=" + likeList + ", commentList=" + commentList + "]";
 	}
 	
+	//조회수 증가 메서드 
+	public void increasedViewCount() {
+		this.viewCount++;
+		
+	}
+	
 	
 }
