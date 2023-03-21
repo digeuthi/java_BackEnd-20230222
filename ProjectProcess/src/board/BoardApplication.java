@@ -126,11 +126,13 @@ public class BoardApplication {
 				
 			case PATCH_BOARD: //게시물 수정
 				
-				PatchBoardDto patchBoardDto = new PatchBoardDto();
+				//Scanner scanner = new Scanner(System.in);
+				//이거 밑에 뭐.. 간단한 메서드로 옮긴다는데 어떻게 한단건지 모르겟군 //어떤 기능을 명시해놓고 따로 빼주는게 좋은 코드..!
+				PatchBoardDto patchBoardDto = new PatchBoardDto(); //이거 위치 여기 맞나 확인하자
 				try {
 					System.out.print("게시물 번호 : ");
-					String boardNumberString = scanner.nextLine(); //스위치에서 보드넘버 중복뜸
-					patchBoardDto.setBoardNumber(Integer.parseInt(boardNumberString)); //문자열을 숫자 정수로 바꿔줌
+					String patchNumberString = scanner.nextLine(); //스위치에서 보드넘버 중복뜸
+					patchBoardDto.setBoardNumber(Integer.parseInt(patchNumberString)); //문자열을 숫자 정수로 바꿔줌
 													//일반적 정수형태가 아니라 문자열로 들어와서 예외가 터질수있다.
 					System.out.print("제목 : "); //아마 에러가 뜰것..? nextInt다음 문자열 오면 에러가 된다 -> 수정
 					patchBoardDto.setTitle(scanner.nextLine());
@@ -148,6 +150,25 @@ public class BoardApplication {
 				boardController.patchBoard(patchBoardDto); //patchBoard만들어주러 가기 컨트롤러에!
 				
 				break;
+				
+			case DELETE_BOARD:
+				
+				int deleteBoardNumber = 0;
+				String deleteEmail = null;
+				
+				try {
+					System.out.print("게시물 번호 : ");
+					deleteBoardNumber= Integer.parseInt(scanner.nextLine());
+					System.out.print("이메일 : ");
+					deleteEmail = scanner.nextLine();
+				}
+				catch(Exception exception) {
+					exception.printStackTrace();
+					continue;
+				}
+				
+				boardController.deleteBoard(deleteBoardNumber, deleteEmail);
+				break;
 			
 			default : System.out.println(HttpStatus.NOT_FOUND);
 					
@@ -155,5 +176,28 @@ public class BoardApplication {
 			
 		}
 	}
+	
+//	private static void patchBoard() { //메서드 따로 만들어서 
+//		PatchBoardDto patchBoardDto = new PatchBoardDto(); //이거 위치 여기 맞나 확인하자
+//		try {
+//			System.out.print("게시물 번호 : ");
+//			String patchNumberString = scanner.nextLine(); //스위치에서 보드넘버 중복뜸
+//			patchBoardDto.setBoardNumber(Integer.parseInt(patchNumberString)); //문자열을 숫자 정수로 바꿔줌
+//											//일반적 정수형태가 아니라 문자열로 들어와서 예외가 터질수있다.
+//			System.out.print("제목 : "); //아마 에러가 뜰것..? nextInt다음 문자열 오면 에러가 된다 -> 수정
+//			patchBoardDto.setTitle(scanner.nextLine());
+//			System.out.print("내용 : ");
+//			patchBoardDto.setContent(scanner.nextLine());
+//			System.out.print("이미지 : ");
+//			patchBoardDto.setBoardImageUrl(scanner.nextLine());
+//			System.out.print("이메일 : ");
+//			patchBoardDto.setEmail(scanner.nextLine());
+//		} catch(Exception exception) {
+//			System.out.println(HttpStatus.NOT_FOUND);
+//			continue;
+//		}
+//		
+//		boardController.patchBoard(patchBoardDto); //patchBoard만들어주러 가기 컨트롤러에!
+//	}
 
 }

@@ -6,6 +6,7 @@ import board.common.constant.HttpStatus;
 import board.dto.request.board.PatchBoardDto;
 import board.dto.request.board.PostBoardDto;
 import board.dto.response.ResponseDto;
+import board.dto.response.board.DeleteBoardResponseDto;
 import board.dto.response.board.GetBoardListResponseDto;
 import board.dto.response.board.GetBoardResponseDto;
 import board.dto.response.board.PatchBoardResponseDto;
@@ -76,6 +77,22 @@ public class BoardController {
 		System.out.println(response.toString());
 	}
 	
-	
+	public void deleteBoard(int boardNumber, String email) {
+		boolean auth = email.isBlank();
+		if(auth) {
+			System.out.println(HttpStatus.UNAUTHORIZED);
+			return;
+		}
+		
+		boolean valid = boardNumber <= 0;
+		if(valid) {
+			System.out.println(HttpStatus.BAD_REQUEST);
+			return;
+		}
+		
+		ResponseDto<List<DeleteBoardResponseDto>> response = //DeleteBoardResponseDto만들어줌
+				boardService.deleteBoard(boardNumber,email);
+		System.out.println(response.toString());
+	}
 	
 }

@@ -51,7 +51,7 @@ public class PatchBoardResponseDto {
 		this.commentList = commentList;
 	}
 	
-	public PatchBoardResponseDto(Board board) { //겟보드리스펀스디티오의 다른 생성자 하나 그대로 가져옴
+	public PatchBoardResponseDto(Board board) { //getBoardResponseDto의 다른 생성자 하나 그대로 가져옴
 		this.boardNumber = board.getBoardNumber();
 		this.title = board.getTitle();
 		this.content = board.getContent();

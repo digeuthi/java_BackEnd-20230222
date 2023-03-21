@@ -7,7 +7,7 @@ public class PatchBoardDto {
 	private String title;
 	private String content;
 	private String boardImageUrl;
-	//수정을 하려는 사람이 권한이 있는지 아닌지 판단을 해야한다.
+	//수정을 하려는 사람이 권한이 있는지 아닌지 판단을 해야한다. 이메일 요소 필요하다
 	private String email;
 	
 	public PatchBoardDto () {}
@@ -66,7 +66,7 @@ public class PatchBoardDto {
 		return "PatchBoardDto [boardNumber=" + boardNumber + ", title=" + title + ", content=" + content
 				+ ", boardImageUrl=" + boardImageUrl + ", email=" + email + "]";
 	}
-	//검증할것 미릴 지정
+	//검증할것 미리 지정
 	public boolean valid() {
 		boolean result = 
 				this.boardNumber <= 0 ||

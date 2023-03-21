@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="reservation.entity.Cost"/>
-    <fullyQualifiedTypeName name="reservation.entity.StopStation"/>
-    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatterBuilder"/>
     <fullyQualifiedTypeName name="trainReservation.dto.GetTrainListDto"/>
     <fullyQualifiedTypeName name="trainReservation.service.ReservationService"/>
     <fullyQualifiedTypeName name="trainReservation.entity.Train"/>
@@ -55,9 +52,12 @@
     <fullyQualifiedTypeName name="board.dto.response.board.GetBoardListResponseDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="board.entity.Like"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="board.entity.Comment"/>
-    <fullyQualifiedTypeName name="board.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="board.dto.response.board.GetBoardResponseDto"/>
     <fullyQualifiedTypeName name="board.entity.Board"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.PatchBoardResponseDto"/>
+    <fullyQualifiedTypeName name="board.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="board.dto.request.board.PatchBoardDto"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="board.dto.response.board.DeleteBoardResponseDto"/>
 </qualifiedTypeNameHistroy>
