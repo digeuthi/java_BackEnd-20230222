@@ -1,9 +1,0 @@
-package airplaneReservation.entity;
-
-public class Cost {
-	
-	private String departureCountry;
-	private String arrivalCountry;
-	private int amount;
-	
-}

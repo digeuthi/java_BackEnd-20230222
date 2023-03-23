@@ -16,6 +16,7 @@ public class ReservationController {
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 	
 	private ReservationService reservationService;
+	
 	private GetTrainListDto getTrainListDto;
 	private PostReservationDto postReservationDto;
 	private GetReservationDto getReservationDto;
@@ -58,6 +59,7 @@ public class ReservationController {
 			
 			System.out.println(possibleTrains.toString());
 			
+			postReservation();
 			break;
 		}
 	}
