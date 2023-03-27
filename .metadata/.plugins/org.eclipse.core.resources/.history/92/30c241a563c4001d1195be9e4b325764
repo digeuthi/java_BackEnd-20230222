@@ -1,5 +1,0 @@
-package board.repository;
-//저장소
-public class UserRepository {
-
-}

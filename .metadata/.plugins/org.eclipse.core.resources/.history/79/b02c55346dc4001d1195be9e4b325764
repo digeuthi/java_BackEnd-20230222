@@ -1,8 +1,0 @@
-package board.dto.response.user;
-
-public class SignInResponseDto {
-
-	
-	//유저 정보 반환해줄거야..
-	
-}

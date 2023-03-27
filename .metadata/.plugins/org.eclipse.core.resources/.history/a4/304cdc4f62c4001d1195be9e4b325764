@@ -1,7 +1,0 @@
-package board.dto.response;
-
-public class ResponseDto {
-
-	//사용자한테 반환해주는 포멧을 만든다
-	
-}
