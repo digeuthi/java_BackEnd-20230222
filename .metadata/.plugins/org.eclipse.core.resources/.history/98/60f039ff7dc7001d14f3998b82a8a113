@@ -1,7 +1,0 @@
-package board.dto.request.board;
-
-public class PatchBoardDto {
-
-	//게시물 수정 관련 dto
-	
-}

@@ -1,5 +1,7 @@
 package website.entity;
 
+import website.dto.request.user.SignUpDto;
+
 //'이메일 주소'(구분요소)(문자열), 비밀번호(문자열), 비밀번호 확인(문자열), 닉네임(문자열), 핸드폰 번호(문자열), 
 //주소(문자열), 상세주소(문자열), 프로필사진(파일객체쓸수도 있지만 이미지의 링크 주소를 넣는다, 문자열)
 public class User {
@@ -26,6 +28,15 @@ public class User {
 		this.address = address;
 		this.addressDetail = addressDetail;
 		this.profileImageUrl = profileImageUrl;
+	}
+	
+	public User(SignUpDto dto) {
+		this.email = dto.getEmail();
+		this.password = dto.getPassword();
+		this.nickname = dto.getNickname();
+		this.telNumber = dto.getTelNumber();
+		this.address = dto.getAddress();
+		this.addressDetail = dto.getAddressDetail();
 	}
 
 	public String getEmail() {

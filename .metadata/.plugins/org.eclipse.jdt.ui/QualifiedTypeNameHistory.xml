@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="reservation.entity.Seat"/>
-    <fullyQualifiedTypeName name="reservation.dto.GetTrainListDto"/>
-    <fullyQualifiedTypeName name="reservation.entity.Train"/>
-    <fullyQualifiedTypeName name="board.service.UserService"/>
-    <fullyQualifiedTypeName name="board.controller.UserController"/>
-    <fullyQualifiedTypeName name="board.dto.response.user.SignInResponseDto"/>
-    <fullyQualifiedTypeName name="board.dto.request.user.SignInDto"/>
-    <fullyQualifiedTypeName name="board.controller.BoardController"/>
-    <fullyQualifiedTypeName name="board.service.BoardService"/>
     <fullyQualifiedTypeName name="board.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
@@ -16,7 +7,6 @@
     <fullyQualifiedTypeName name="airplaneReservation.entity.Seat"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.GetReservationDto"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.GetAirplaneListDto"/>
     <fullyQualifiedTypeName name="airplaneReservation.entity.Airplane"/>
     <fullyQualifiedTypeName name="airplaneReservation.entity.ReservationInfo"/>
@@ -53,11 +43,21 @@
     <fullyQualifiedTypeName name="test.entity.User"/>
     <fullyQualifiedTypeName name="test.service.UserService"/>
     <fullyQualifiedTypeName name="test.dto.GetUserListDto"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="website.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="website.controller.UserController"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
+    <fullyQualifiedTypeName name="website.common.constant.HttpStatus"/>
+    <fullyQualifiedTypeName name="website.service.UserService"/>
+    <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="website.common.constant.ResponseMessage"/>
+    <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="website.entity.User"/>
 </qualifiedTypeNameHistroy>

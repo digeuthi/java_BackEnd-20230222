@@ -1,7 +1,0 @@
-package board.dto.response.board;
-
-public class PatchBoardResponseDto {
-
-	//수정후 반환에 대한 dto
-	
-}
