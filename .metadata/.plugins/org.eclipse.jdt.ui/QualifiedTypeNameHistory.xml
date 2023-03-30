@@ -55,9 +55,9 @@
     <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
     <fullyQualifiedTypeName name="website.common.constant.HttpStatus"/>
     <fullyQualifiedTypeName name="website.service.UserService"/>
-    <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="website.common.constant.ResponseMessage"/>
     <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="website.entity.User"/>
+    <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
 </qualifiedTypeNameHistroy>
