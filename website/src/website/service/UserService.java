@@ -1,6 +1,7 @@
 package website.service;
 
 import website.common.constant.ResponseMessage;
+import website.dto.request.user.SignInDto;
 import website.dto.request.user.SignUpDto;
 import website.dto.response.ResponseDto;
 import website.entity.User;
@@ -33,6 +34,11 @@ public class UserService {
 		userRepository.save(user);
 		
 		return new ResponseDto(true, "성공", true);
+		
+	}
+	
+	public ResponseDto<Boolean> signIn(SignInDto dto){
+		
 		
 	}
 }

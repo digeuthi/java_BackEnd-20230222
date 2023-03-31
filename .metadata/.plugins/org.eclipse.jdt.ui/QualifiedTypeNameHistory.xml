@@ -43,7 +43,6 @@
     <fullyQualifiedTypeName name="test.entity.User"/>
     <fullyQualifiedTypeName name="test.service.UserService"/>
     <fullyQualifiedTypeName name="test.dto.GetUserListDto"/>
-    <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
@@ -52,12 +51,13 @@
     <fullyQualifiedTypeName name="website.repository.UserRepository"/>
     <fullyQualifiedTypeName name="website.controller.UserController"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
     <fullyQualifiedTypeName name="website.common.constant.HttpStatus"/>
     <fullyQualifiedTypeName name="website.service.UserService"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="website.common.constant.ResponseMessage"/>
-    <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="website.entity.User"/>
     <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
 </qualifiedTypeNameHistroy>
