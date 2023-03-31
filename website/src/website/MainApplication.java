@@ -3,6 +3,7 @@ package website;
 import java.util.Scanner;
 
 import website.controller.UserController;
+import website.dto.request.user.SignInDto;
 import website.dto.request.user.SignUpDto;
 
 public class MainApplication {
@@ -10,7 +11,7 @@ public class MainApplication {
 	private static UserController userController = new UserController();
 	
 	private static final String SIGN_UP = "POST /sign-up";
-	
+	private static final String SIGN_IN ="POST /sign-in";
 
 	public static void main(String[] args) {
 		
@@ -40,6 +41,18 @@ public class MainApplication {
 			signUpDto.setAddressDetail(scanner.nextLine());
 			
 			userController.signUp(signUpDto);
+			break;
+			
+		case SIGN_IN :
+			SignInDto signInDto = new SignInDto();
+			
+			System.out.println("이메일 주소 : ");
+			signInDto.setEmail(scanner.nextLine());
+			System.out.println("비밀번호 : ");
+			signInDto.setPassword(scanner.nextLine());
+			// 왜 get이 아니고 set을 쓰는걸까
+			
+			userController.signIn(signInDto);
 			break;
 		}
 			

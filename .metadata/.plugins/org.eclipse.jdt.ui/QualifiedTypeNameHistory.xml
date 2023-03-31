@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="board.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="reservation.entity.ReservationInfo"/>
     <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="PostReservationDto"/>
@@ -59,5 +58,6 @@
     <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="website.dto.response.user.SignInResponseDto"/>
     <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
 </qualifiedTypeNameHistroy>

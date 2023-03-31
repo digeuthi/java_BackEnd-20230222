@@ -4,6 +4,7 @@ import website.common.constant.HttpStatus;
 import website.dto.request.user.SignInDto;
 import website.dto.request.user.SignUpDto;
 import website.dto.response.ResponseDto;
+import website.dto.response.user.SignInResponseDto;
 import website.service.UserService;
 
 public class UserController {
@@ -26,6 +27,9 @@ public class UserController {
 			System.out.println(HttpStatus.BAD_REQUEST);
 			return;
 		}
+		
+		ResponseDto<SignInResponseDto> response = userService.signIn(dto);
+		System.out.println(response.toString());
 	}
 	
 }
