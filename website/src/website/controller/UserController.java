@@ -18,8 +18,12 @@ public class UserController {
 			return;
 		}
 		
-		ResponseDto<Boolean> response = userService.signUp(dto);
-		System.out.println(response.toString());
+		try {
+			ResponseDto<Boolean> response = userService.signUp(dto);
+			System.out.println(response.toString());
+		}catch(Exception exception) {
+			System.out.println("Exception is occured!");
+		}
 	}
 	
 	public void signIn(SignInDto dto) {
@@ -27,9 +31,12 @@ public class UserController {
 			System.out.println(HttpStatus.BAD_REQUEST);
 			return;
 		}
-		
-		ResponseDto<SignInResponseDto> response = userService.signIn(dto);
-		System.out.println(response.toString());
+		try {
+			ResponseDto<SignInResponseDto> response = userService.signIn(dto);
+			System.out.println(response.toString());
+		} catch(Exception exception) {
+			System.out.println("Exception is occured!");
+		}
 	}
 	
 }
