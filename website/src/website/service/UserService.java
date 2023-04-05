@@ -34,7 +34,7 @@ public class UserService {
 		User user = new User(dto);
 		userRepository.save(user);
 		
-		return new ResponseDto(true, "성공", true);
+		return new ResponseDto<>(true, "성공", true);
 		
 	}
 	
