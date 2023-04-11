@@ -40,17 +40,17 @@ public class PostBoardResponseDto {
 	}
 	
 	public PostBoardResponseDto(Board board) {
-		this.boardNumber = ;
-		this.boardImageUrl = ;
-		this.writerEmail = ;
-		this.writerNickname = ;
-		this.writerProfileImageUrl = ;
-		this.writeDate = writeDate;
-		this.title = title;
-		this.content = content;
-		this.viewCount = viewCount;
-		this.likeList = likeList;
-		this.commentList = commentList;
+		this.boardNumber = board.getBoardNumber();
+		this.boardImageUrl = board.getImageUrl();
+		this.writerEmail = board.getWriterEmail();
+		this.writerNickname = board.getWriterNickname();
+		this.writerProfileImageUrl = board.getWriterProfileImageUrl();
+		this.writeDate = board.getWriteDate();
+		this.title = board.getTitle();
+		this.content = board.getContent();
+		this.viewCount = board.getViewCount();
+		this.likeList = board.getLikeList();
+		this.commentList = board.getCommentList();
 	}
 
 	public int getBoardNumber() {

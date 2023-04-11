@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="reservation.dto.PostReservationDto"/>
-    <fullyQualifiedTypeName name="PostReservationDto"/>
-    <fullyQualifiedTypeName name="airplaneReservation.entity.Seat"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.GetReservationDto"/>
     <fullyQualifiedTypeName name="airplaneReservation.dto.GetAirplaneListDto"/>
@@ -44,7 +41,6 @@
     <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="website.repository.UserRepository"/>
     <fullyQualifiedTypeName name="website.controller.UserController"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="website.common.constant.HttpStatus"/>
@@ -54,10 +50,14 @@
     <fullyQualifiedTypeName name="website.entity.User"/>
     <fullyQualifiedTypeName name="website.dto.request.user.SignUpDto"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
-    <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
     <fullyQualifiedTypeName name="website.dto.response.user.SignInResponseDto"/>
     <fullyQualifiedTypeName name="website.dto.request.user.SignInDto"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="website.entity.Board"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="website.entity.Board"/>
+    <fullyQualifiedTypeName name="website.repository.BoardRepository"/>
+    <fullyQualifiedTypeName name="website.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="website.dto.response.ResponseDto"/>
+    <fullyQualifiedTypeName name="website.dto.response.board.PostBoardResponseDto"/>
+    <fullyQualifiedTypeName name="website.dto.request.board.PostBoardDto"/>
 </qualifiedTypeNameHistroy>
